@@ -79,7 +79,7 @@ data class Song(
         startActivity(otherActivity)
 ```
 
-— Então a `OtherActivity` no onCreate acessa os extras definidos em sua Intent e mostra seus valores
+— Então a `OtherActivity` no `onCreate` acessa os extras definidos em sua `Intent` e mostra seus valores
 
 ```
         // Get values from intent
