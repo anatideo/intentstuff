@@ -35,6 +35,24 @@ A `OtherActivity` que receberá os dados por `Intent` se torna responsável sobr
     }
 ```
 
+Veja que como criamos uma class chamada `Song`, ela precisa ser definida na `Intent` pelo overload da função `putExtra` que recebe um `Parcelable` por parâmetro e no caso da lista usamos a função `putParcelableArrayListExtra`
+
+```
+...
+            intent.putParcelableArrayListExtra(EXTRA_LIST_KEY, ArrayList(listValue))
+            intent.putExtra(EXTRA_FIRST_INDEX_LIST_KEY, firstIndexListValue)
+...
+```
+
+Para que isso fosse possível, tivemos que fazer a class `Song` extender da class `Parcelable
+
+```
+@Parcelize
+data class Song(
+    val name: String
+) : Parcelable
+```
+
 A `MainActivity` chama a função `newIntent` para receber uma instância de `Intent` e então navegar para a próxima tela enviando os dados desejados
 
 ```
@@ -76,24 +94,6 @@ Então a `OtherActivity` no onCreate acessa os extras definidos em sua Intent e 
         binding.intValue.text = intFromIntent.toString()
         binding.listValue.text = listFromIntent.toString()
         binding.firstIndexListValue.text = firstIndexListFromIntent?.name.toString()
-```
-
-Veja que como criamos uma class chamada `Song`, ela precisa ser definida na `Intent` pelo overload da função `putExtra` que recebe um `Parcelable` por parâmetro e no caso da lista usamos a função `putParcelableArrayListExtra`
-
-```
-...
-            intent.putParcelableArrayListExtra(EXTRA_LIST_KEY, ArrayList(listValue))
-            intent.putExtra(EXTRA_FIRST_INDEX_LIST_KEY, firstIndexListValue)
-...
-```
-
-Para que isso fosse possível, tivemos que fazer a class `Song` extender da class `Parcelable
-
-```
-@Parcelize
-data class Song(
-    val name: String
-) : Parcelable
 ```
 
 ___
