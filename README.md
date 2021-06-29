@@ -3,8 +3,9 @@
 Esse repositório visa ajudar estudantes de desenvolvimento Android fornecendo uma colinha de como enviar diferentes tipos através de `Intent`. 
 No exemplo a seguir a `MainActivity` envia dados para a `OtherActivity` por `Intent`.
 
+___
 
-A `OtherActivity` que receberá os dados por `Intent` se torna responsável sobre inserir os dados, para isso ela definiu um `companion object`
+— A `OtherActivity` que receberá os dados por `Intent` se torna responsável sobre inserir os dados, para isso ela definiu um `companion object`
 
 ```
     companion object {
@@ -35,7 +36,7 @@ A `OtherActivity` que receberá os dados por `Intent` se torna responsável sobr
     }
 ```
 
-Veja que como criamos uma class chamada `Song`, ela precisa ser definida na `Intent` pelo overload da função `putExtra` que recebe um `Parcelable` por parâmetro e no caso da lista usamos a função `putParcelableArrayListExtra`
+— Veja que como criamos uma class chamada `Song`, ela precisa ser definida na `Intent` pelo overload da função `putExtra` que recebe um `Parcelable` por parâmetro e no caso da lista usamos a função `putParcelableArrayListExtra`
 
 ```
 ...
@@ -44,7 +45,7 @@ Veja que como criamos uma class chamada `Song`, ela precisa ser definida na `Int
 ...
 ```
 
-Para que isso fosse possível, tivemos que fazer a class `Song` extender da class `Parcelable`. Nesse caso também estamos usando o `androidExtensions` que nos permite adicionar a annotation `@Parcelize` pra deixar mais enxuta a implementação
+— Para que isso fosse possível, tivemos que fazer a class `Song` extender da class `Parcelable`. Nesse caso também estamos usando o `androidExtensions` que nos permite adicionar a annotation `@Parcelize` pra deixar mais enxuta a implementação
 
 ```
 @Parcelize
@@ -53,7 +54,7 @@ data class Song(
 ) : Parcelable
 ```
 
-A `MainActivity` chama a função `newIntent` para receber uma instância de `Intent` e então navegar para a próxima tela enviando os dados desejados
+— A `MainActivity` chama a função `newIntent` para receber uma instância de `Intent` e então navegar para a próxima tela enviando os dados desejados
 
 ```
         val strValue = "K-Pop is nice"
@@ -78,7 +79,7 @@ A `MainActivity` chama a função `newIntent` para receber uma instância de `In
         startActivity(otherActivity)
 ```
 
-Então a `OtherActivity` no onCreate acessa os extras definidos em sua Intent e mostra seus valores
+— Então a `OtherActivity` no onCreate acessa os extras definidos em sua Intent e mostra seus valores
 
 ```
         // Get values from intent
