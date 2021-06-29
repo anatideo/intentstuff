@@ -98,4 +98,4 @@ data class Song(
 
 ___
 
-Faça o clone do projeto e explore o código e faça seus próprios experimentos (⌒‿⌒)
+**Faça o clone do projeto e explore o código e faça seus próprios experimentos (⌒‿⌒)**
