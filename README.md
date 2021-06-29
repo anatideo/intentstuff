@@ -4,7 +4,7 @@ Esse repositório visa ajudar estudantes de desenvolvimento Android fornecendo u
 No exemplo a seguir a `MainActivity` envia dados para a `OtherActivity` por `Intent`.
 
 
-A `OtherActivity` que receberá os dados por `Intent` se torna responsável sobre inserir os dados, para isso defini um `companion object`
+A `OtherActivity` que receberá os dados por `Intent` se torna responsável sobre inserir os dados, para isso ela definiu um `companion object`
 
 ```
     companion object {
