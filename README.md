@@ -13,7 +13,7 @@ ___
         const val EXTRA_BOOLEAN_KEY = "EXTRA_BOOLEAN_KEY"
         const val EXTRA_INT_KEY = "EXTRA_INT_KEY"
         const val EXTRA_LIST_KEY = "EXTRA_LIST_KEY"
-        const val EXTRA_FIRST_INDEX_LIST_KEY = "EXTRA_FIRST_INDEX_LIST_KEY"
+        const val EXTRA_SONG_KEY = "EXTRA_SONG_KEY"
 
         fun newIntent(
             context: Context,
@@ -21,7 +21,7 @@ ___
             booleanValue: Boolean,
             intValue: Int,
             listValue: List<Song>,
-            firstIndexListValue: Song
+            songValue: Song
         ): Intent {
             val intent =  Intent(context, OtherActivity::class.java)
 
@@ -29,7 +29,7 @@ ___
             intent.putExtra(EXTRA_BOOLEAN_KEY, booleanValue)
             intent.putExtra(EXTRA_INT_KEY, intValue)
             intent.putParcelableArrayListExtra(EXTRA_LIST_KEY, ArrayList(listValue))
-            intent.putExtra(EXTRA_FIRST_INDEX_LIST_KEY, firstIndexListValue)
+            intent.putExtra(EXTRA_SONG_KEY, songValue)
 
             return intent
         }
@@ -41,7 +41,7 @@ ___
 ```
 ...
             intent.putParcelableArrayListExtra(EXTRA_LIST_KEY, ArrayList(listValue))
-            intent.putExtra(EXTRA_FIRST_INDEX_LIST_KEY, firstIndexListValue)
+            intent.putExtra(EXTRA_SONG_KEY, songValue)
 ...
 ```
 
@@ -65,7 +65,7 @@ data class Song(
                 Song("Day6"),
                 Song("Girls' Generation")
         )
-        val firstIndexList = songsList[0]
+        val song = songsList[0]
 
         val otherActivity = OtherActivity.newIntent(
                 context = this,
@@ -73,7 +73,7 @@ data class Song(
                 booleanValue = boolValue,
                 intValue = integerValue,
                 listValue = songsList,
-                firstIndexListValue = firstIndexList
+                songValue = song
         )
 
         startActivity(otherActivity)
@@ -87,14 +87,14 @@ data class Song(
         val booleanFromIntent = intent.extras?.getBoolean(EXTRA_BOOLEAN_KEY)
         val intFromIntent = intent.extras?.getInt(EXTRA_INT_KEY)
         val listFromIntent = intent.extras?.getParcelableArrayList<Song>(EXTRA_LIST_KEY)?.toList()
-        val firstIndexListFromIntent = intent.extras?.getParcelable<Song>(EXTRA_FIRST_INDEX_LIST_KEY)
+        val songFromIntent = intent.extras?.getParcelable<Song>(EXTRA_SONG_KEY)
 
         // Then show it
         binding.stringValue.text = stringFromIntent
         binding.booleanValue.text = booleanFromIntent.toString()
         binding.intValue.text = intFromIntent.toString()
         binding.listValue.text = listFromIntent.toString()
-        binding.firstIndexListValue.text = firstIndexListFromIntent?.name.toString()
+        binding.firstIndexListValue.text = songFromIntent?.name.toString()
 ```
 
 ___
