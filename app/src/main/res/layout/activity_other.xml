@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootView"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="25dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="INTENT VALUES" />
+
+    <TextView
+        android:id="@+id/stringLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:text="String value:" />
+
+    <TextView
+        android:id="@+id/stringValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@id/stringLabel"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        tools:text="Some string value" />
+
+    <TextView
+        android:id="@+id/booleanLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/stringValue"
+        android:text="Boolean value:" />
+
+    <TextView
+        android:id="@+id/booleanValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@id/booleanLabel"
+        app:layout_constraintTop_toBottomOf="@id/stringValue"
+        tools:text="Some boolean value" />
+
+    <TextView
+        android:id="@+id/intLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/booleanValue"
+        android:text="Int value:" />
+
+    <TextView
+        android:id="@+id/intValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@id/intLabel"
+        app:layout_constraintTop_toBottomOf="@id/booleanValue"
+        tools:text="Some int value" />
+
+    <TextView
+        android:id="@+id/listLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/intValue"
+        android:text="Complete list value:" />
+
+    <TextView
+        android:id="@+id/listValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@id/listLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/intValue"
+        tools:text="Some complete list value" />
+
+    <TextView
+        android:id="@+id/firstIndexListLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/listValue"
+        android:text="First index list value:" />
+
+    <TextView
+        android:id="@+id/firstIndexListValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@id/firstIndexListLabel"
+        app:layout_constraintTop_toBottomOf="@id/listValue"
+        tools:text="Some first index list value" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
