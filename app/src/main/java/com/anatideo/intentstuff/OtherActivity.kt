@@ -28,7 +28,7 @@ class OtherActivity : AppCompatActivity() {
         binding.booleanValue.text = booleanFromIntent.toString()
         binding.intValue.text = intFromIntent.toString()
         binding.listValue.text = listFromIntent.toString()
-        binding.firstIndexListValue.text = songFromIntent?.name.toString()
+        binding.songValue.text = songFromIntent?.name.toString()
     }
 
     companion object {
