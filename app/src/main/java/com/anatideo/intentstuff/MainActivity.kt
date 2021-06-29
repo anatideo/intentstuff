@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
                 Song("Day6"),
                 Song("Girls' Generation")
         )
-        val firstIndexList = songsList[0]
+        val song = songsList[0]
 
         val otherActivity = OtherActivity.newIntent(
                 context = this,
@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
                 booleanValue = boolValue,
                 intValue = integerValue,
                 listValue = songsList,
-                firstIndexListValue = firstIndexList
+                songValue = song
         )
 
         startActivity(otherActivity)
