@@ -44,7 +44,7 @@ Veja que como criamos uma class chamada `Song`, ela precisa ser definida na `Int
 ...
 ```
 
-Para que isso fosse possível, tivemos que fazer a class `Song` extender da class `Parcelable`
+Para que isso fosse possível, tivemos que fazer a class `Song` extender da class `Parcelable`. Nesse caso também estamos usando o `androidExtensions` que nos permite adicionar a annotation `@Parcelize` pra deixar mais enxuta a implementação
 
 ```
 @Parcelize
